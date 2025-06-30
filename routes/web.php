@@ -17,13 +17,12 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['prefix' => 'ticket'], function () use ($router) {
-    $router->get('/', 'TicketController@index');
-    $router->post('/', 'TicketController@store');
-    $router->patch('/{id}', 'TicketController@update');
-    $router->delete('/{id}', 'TicketController@destroy'); 
-});
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/tickets', 'TicketController@index');
+    $router->post('/tickets', 'TicketController@store');
+    $router->put('/tickets/{id}', 'TicketController@update');
+    $router->delete('/tickets/{id}', 'TicketController@destroy');
 
-$router->options('{any:.*}', function () {
-return response('', 200);
+    $router->get('/projects', 'ProjectController@index');
+    $router->get('/ticket-types', 'TicketTypeController@index');
 });

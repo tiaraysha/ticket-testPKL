@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Repositories\TicketRepository;
+use App\Models\Ticket;
+use App\Models\TicketType;
 
 class TicketService
 {
@@ -19,9 +21,23 @@ class TicketService
     }
 
     public function store(array $data)
-    {
-        return $this->ticketRepository->storeNewTicket($data);
+{
+    $ticketType = TicketType::where('name', $data['ticket_type'])->first();
+    if (!$ticketType) {
+        throw new \Exception("Invalid ticket type.");
     }
+
+    $ticket = Ticket::create([
+        'email' => $data['email'],
+        'title' => $data['title'],
+        'description' => $data['description'],
+        'ticket_type_id' => $ticketType->id,
+        'status' => $data['status'],
+        'assign_at' => $data['assign_at'],
+    ]);
+
+    return $ticket;
+}
 
     public function update($id, array $data)
     {

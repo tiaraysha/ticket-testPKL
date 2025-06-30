@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Factory;
+use Illuminate\Support\Facades\Validator;
 
 class TicketRequest
 {

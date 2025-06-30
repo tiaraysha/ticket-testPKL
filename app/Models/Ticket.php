@@ -14,15 +14,14 @@ class Ticket extends Model
     use HasUuids;
 
     protected $fillable = [
-        'id',
         'name',
         'email',
         'title',
         'description',
-        'ticket_type_id',
-        'project_id',
         'assign_at',
         'status',
+        'project_id',
+        'ticket_type_id',
     ];
 
     public $incrementing = false;

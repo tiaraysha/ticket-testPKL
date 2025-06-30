@@ -17,15 +17,15 @@ return new class extends Migration
             $table->string('email');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->uuid('ticket_type_id');
-            $table->uuid('project_id');
             $table->date('assign_at');
             $table->enum('status', ['open', 'progress', 'closed', 'cancel'])->default('open');
+            $table->uuid('project_id');
+            $table->uuid('ticket_type_id');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('ticket_type_id')->references('id')->on('ticket_types');
             $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('ticket_type_id')->references('id')->on('ticket_types');
         });
 
     }
