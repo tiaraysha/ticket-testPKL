@@ -6,8 +6,10 @@ Website Ticket Management
 - Statistik tiket masuk per bulan (chart)
 
 - Halaman Dashboard
-  ![image](https://github.com/user-attachments/assets/fd358151-20b0-490c-b4f7-1a17bc28c7e0)
+  ![image](https://github.com/user-attachments/assets/2d3796fa-c946-4e1e-aee3-508b57aec5eb)
+
 
 - Halaman Index (main content)
-  ![image](https://github.com/user-attachments/assets/3f0ea150-bb3d-43dc-bd1d-8c83c88bd3ab)
+  ![image](https://github.com/user-attachments/assets/5b3e55f4-17fe-47c5-827e-c3f86bc2b3d4)
+
 
